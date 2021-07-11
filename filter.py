@@ -57,7 +57,7 @@ for obj in args.objects:
     files_with_object = {}
     for fname, results in file_results.items():
         for res in results:
-            if res["name"] == obj:
+            if res["name"] in (obj, obj.replace("_", " ")):
                 files_with_object[fname] = res["percentage_probability"]
                 break
     print(files_with_object)
