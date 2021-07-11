@@ -1,4 +1,4 @@
-"""Move each image in the JSON files to a directory."""
+"""Move each image listed in a JSON file to a new directory."""
 
 import os
 import shutil
@@ -11,6 +11,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--json", help="the json file of images", required=True)
 parser.add_argument("--src", help="the source directory", required=True)
 parser.add_argument("--dest", help="the destination directory", required=True)
+parser.add_argument(
+    "--copy", help="copy image files instead of moving", action="store_true"
+)
 args = parser.parse_args()
 print(args)
 
@@ -34,6 +37,9 @@ for file in files:
     print(file)
     dest = os.path.abspath(os.path.join(args.dest, file))
     try:
-        shutil.move(src, dest)
+        if args.copy:
+            shutil.copy(src, dest)
+        else:
+            shutil.move(src, dest)
     except FileNotFoundError:
         continue
