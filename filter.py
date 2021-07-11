@@ -48,7 +48,7 @@ for image in os.listdir(args.dir):
     print(detections)
 print()
 print(file_results)
-json.dump(file_results, open("files.results", "w"))
+json.dump(file_results, open("files.results.json", "w"))
 print()
 
 # Filter
@@ -61,7 +61,7 @@ for obj in args.objects:
                 files_with_object[fname] = res["percentage_probability"]
                 break
     print(files_with_object)
-    json.dump(files_with_object, open(f"files.{obj}.object", "w"))
+    json.dump(files_with_object, open(f"files.{obj}.object.json", "w"))
 
 # Empty Images
 files_with_nothing = []
@@ -70,4 +70,4 @@ for fname, results in file_results.items():
     if not results:
         files_with_nothing.append(fname)
 print(files_with_nothing)
-json.dump(files_with_nothing, open(f"files.no.object", "w"))
+json.dump(files_with_nothing, open(f"files.no.object.json", "w"))
