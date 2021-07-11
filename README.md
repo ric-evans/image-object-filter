@@ -1,5 +1,5 @@
-# -object-filter
-/video object-filtering scripts built on ffmpeg and ImageAI.
+# image-object-filter
+Image/video object-filtering scripts built on ffmpeg and ImageAI.
 
 ### Use Case: Find Particular Objects in a Timelapse Video
 1. Use `vid_frames_to_png.sh` to break a video into individual `.png` files, one per frame
