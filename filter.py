@@ -33,6 +33,8 @@ print()
 # Look at each image
 file_results = {}
 for image in os.listdir(args.dir):
+    if not any(image.endswith(ext) for ext in [".png", ".jpeg", ".jpg"]):
+        continue
     print()
     print(image)
 
