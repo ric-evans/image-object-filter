@@ -26,7 +26,7 @@ fi
 
 
 # Get filepaths into temp_file
-find "$1" -maxdepth 1 -type f > $temp_file
+find "$1" -maxdepth 1 -type f | sort > $temp_file
 sed -i -e 's/^/file /' $temp_file
 
 
