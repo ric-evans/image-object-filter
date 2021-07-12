@@ -60,7 +60,7 @@ ffmpeg -i $merged_file ./$png_dir/frame-%05d.png
 # and done
 echo
 echo DONE.
-echo CREATED `ls -l $png_dir | wc -l` PNG FILES @ $png_dir
+echo CREATED `ls $png_dir | wc -l` PNG FILES @ $png_dir
 
 
 
