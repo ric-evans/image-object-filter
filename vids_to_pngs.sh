@@ -33,7 +33,7 @@ sed -i -e 's/^/file /' $temp_file
 # Merge to single .mp4 file
 echo
 echo MERGING TO ONE MP4 FILE...
-if [ $ext -eq "mp4"]; then
+if [ $ext -eq "mp4" ]; then
     # mp4 is easy 
 	ffmpeg -f concat -i $temp_file -c copy $merged_file
 else
