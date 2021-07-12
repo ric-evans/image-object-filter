@@ -133,3 +133,7 @@ dmypy.json
 *.results
 *.zip
 *.h5
+png_frames/
+*.mp4
+*.png
+*.MOV
